@@ -1,38 +1,207 @@
 .App {
-  text-align: center;
+  font-family: 'Helvetica', Arial, sans-serif; /* Helvetica with fallbacks */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #000000; /* Pure black background for the entire app */
+  color: #ffffff; /* White text for readability */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header styling */
+h1 {
+  font-family: 'Helvetica', Arial, sans-serif;
+  color: #ffffff;
+  border-bottom: 2px solid #007bff; /* Blue accent for header */
+  padding-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center; /* Center header for smaller screens */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Form container with responsive padding */
+.joke-form {
+  background-color: #000000; /* Pure black for the form container */
+  padding: 20px;
+  border-radius: 8px; /* Slightly rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Form groups with flexible layout */
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Labels and inputs */
+label {
+  font-family: 'Helvetica', Arial, sans-serif;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #e0e0e0; /* Slightly lighter white for labels */
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #1a1a1a; /* Slightly lighter black for inputs */
+  border: 1px solid #555; /* Medium gray border */
+  color: #ffffff; /* White text */
+  border-radius: 4px;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease; /* Smooth transition for focus */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #007bff; /* Blue accent on focus */
+  outline: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Buttons with responsive sizing */
+button {
+  font-family: 'Helvetica', Arial, sans-serif;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #007bff; /* Blue accent */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Joke result with responsive padding */
+.joke-result {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #1a1a1a; /* Slightly lighter black for distinction */
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Preformatted text for joke output */
+pre {
+  font-family: 'Helvetica', Arial, sans-serif;
+  white-space: pre-wrap;
+  background-color: #000000; /* Pure black for pre content */
+  padding: 10px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  overflow-x: auto; /* Handle long lines */
+}
+
+/* Responsive Design Media Queries */
+
+/* Tablet and smaller screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .App {
+    padding: 15px; /* Reduce padding on smaller screens */
+    max-width: 600px; /* Slightly narrower max-width */
+  }
+
+  h1 {
+    font-size: 1.3rem; /* Smaller header text */
+  }
+
+  .joke-form {
+    padding: 15px; /* Reduce form padding */
+  }
+
+  .form-group {
+    margin-bottom: 15px; /* Reduce spacing between form groups */
+  }
+
+  label {
+    font-size: 0.8rem; /* Smaller label text */
+  }
+
+  input[type="text"],
+  input[type="number"],
+  select {
+    padding: 8px; /* Smaller input padding */
+    font-size: 0.8rem; /* Smaller input text */
+  }
+
+  button {
+    padding: 8px 16px; /* Smaller button padding */
+    font-size: 0.8rem; /* Smaller button text */
+    margin-right: 5px; /* Reduce button margin */
+  }
+
+  .joke-result {
+    padding: 12px; /* Reduce joke result padding */
+  }
+
+  pre {
+    font-size: 0.8rem; /* Smaller pre text */
+    padding: 8px; /* Reduce pre padding */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Mobile screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .App {
+    padding: 10px; /* Minimal padding on mobile */
+    max-width: 100%; /* Full width on mobile */
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 1.1rem; /* Even smaller header */
+    padding-bottom: 8px; /* Reduce header padding */
+  }
+
+  .joke-form {
+    padding: 10px; /* Minimal form padding */
+    border-radius: 4px; /* Smaller border radius */
+  }
+
+  .form-group {
+    margin-bottom: 12px; /* Minimal spacing */
+  }
+
+  label {
+    font-size: 0.7rem; /* Smaller labels */
+  }
+
+  input[type="text"],
+  input[type="number"],
+  select {
+    padding: 6px; /* Minimal input padding */
+    font-size: 0.7rem; /* Smaller input text */
+  }
+
+  button {
+    padding: 6px 12px; /* Minimal button padding */
+    font-size: 0.7rem; /* Smaller button text */
+    margin-right: 3px; /* Minimal button margin */
+    width: 100%; /* Stack buttons on mobile */
+    margin-bottom: 5px; /* Add spacing between stacked buttons */
+  }
+
+  .joke-result {
+    padding: 10px; /* Minimal joke result padding */
+  }
+
+  pre {
+    font-size: 0.7rem; /* Smaller pre text */
+    padding: 6px; /* Minimal pre padding */
   }
 }
